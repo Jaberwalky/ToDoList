@@ -57,7 +57,8 @@ public class ToDoListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.add_item) {
-            // TODO: do something
+            Intent intent = new Intent(this, AddItemActivity.class);
+            startActivity(intent);
             return true;
         } return super.onOptionsItemSelected(item);
     }
