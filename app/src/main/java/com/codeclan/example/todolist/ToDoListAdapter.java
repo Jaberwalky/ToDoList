@@ -41,7 +41,7 @@ public class ToDoListAdapter extends ArrayAdapter<ListItem> {
         int days = DateHelper.getDateDifference(currentItem.getYear(), currentItem.getMonth(), currentItem.getDay());
         daysLeft.setText(days + " Days Left");
 
-        // TODO : use new customer datehelper class to populate due field with countdown.
+        // TODO : work on output of above textview so that 0 days and past are handled correctly.
 
         return listItemView;
 

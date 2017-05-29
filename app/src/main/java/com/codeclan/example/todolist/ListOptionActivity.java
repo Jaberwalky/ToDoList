@@ -36,6 +36,8 @@ public class ListOptionActivity extends AppCompatActivity {
         doneQty.setText(toDoList.getDoneList().size() + " Items");
     }
 
+
+
     public void onToDoListClicked(View button){
         Intent intent = new Intent(this, ToDoListActivity.class);
         intent.putExtra("list", "toDoList");
