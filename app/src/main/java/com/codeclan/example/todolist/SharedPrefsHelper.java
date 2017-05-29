@@ -2,7 +2,6 @@ package com.codeclan.example.todolist;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -21,6 +20,12 @@ public class SharedPrefsHelper {
     public static ToDoList getToDoListFromJson(String json){
         TypeToken<ToDoList> toDoListObject = new TypeToken<ToDoList>(){};
         return gson.fromJson(json, toDoListObject.getType());
+    }
+
+    public static void writeToSharedPrefs(ToDoList toDoList, SharedPreferences prefs){
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("myFavourites", gson.toJson(toDoList));
+        editor.apply();
     }
 
 

@@ -27,8 +27,8 @@ public class ListOptionActivity extends AppCompatActivity {
         TextView toDoQty = (TextView) findViewById(R.id.to_do_num_of_items);
         TextView doneQty = (TextView) findViewById(R.id.done_num_of_items);
 
-        String sharedPrefsKey = getString(R.string.pref_key);
-        SharedPreferences prefs = getSharedPreferences(sharedPrefsKey, Context.MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
+
         String toDoJson = SharedPrefsHelper.getToDoListFromSharedPrefs(prefs);
         ToDoList toDoList = SharedPrefsHelper.getToDoListFromJson(toDoJson);
 
