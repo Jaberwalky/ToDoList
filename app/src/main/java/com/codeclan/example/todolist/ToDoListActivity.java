@@ -27,7 +27,7 @@ public class ToDoListActivity extends AppCompatActivity {
             list = toDoList.getDoneList();
         }
 
-        ListItem listItem = new ListItem("Create To Do List", "2017-06-01");
+        ListItem listItem = new ListItem("Create To Do List", 2017, 6, 1);
         list.add(listItem);
 
 
@@ -37,6 +37,5 @@ public class ToDoListActivity extends AppCompatActivity {
         listView.setAdapter(toDoListAdapter);
 
 
-        PlusO
     }
 }

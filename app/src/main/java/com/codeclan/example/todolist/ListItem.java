@@ -11,14 +11,18 @@ import java.util.ArrayList;
 public class ListItem {
 
     private String title;
-    private String dueDate;
+    private int year;
+    private int month;
+    private int day;
     private ArrayList<SubItem> subToDoList;
     private ArrayList<SubItem> subDoneList;
     private boolean completed;
 
-    public ListItem(String title, String dueDate){
+    public ListItem(String title, int year, int month, int day){
         this.title = title;
-        this.dueDate = dueDate;
+        this.year = year;
+        this.month = month;
+        this.day = day;
         this.subToDoList = new ArrayList<>();
         this.subDoneList = new ArrayList<>();
         this.completed = false;
@@ -28,8 +32,16 @@ public class ListItem {
         return this.title;
     }
 
-    public String getDueDate() {
-        return this.dueDate;
+    public int getYear(){
+        return this.year;
+    }
+
+    public int getMonth(){
+        return this.month;
+    }
+
+    public int getDay(){
+        return this.day;
     }
 
     public void addToSubToDo(SubItem subItem) {
