@@ -9,15 +9,23 @@ import java.util.ArrayList;
 
 public class ToDoListActivity extends AppCompatActivity {
 
+    private ArrayList<ListItem> list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_list);
 
+        ToDoList toDoList = new ToDoList();
+
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
-        ArrayList<ListItem> list = (ArrayList<ListItem>) extras.getSerializable("list");
+        if (extras.getString("list").equals("toDoList")) {
+            list = toDoList.getToDoList();
+        } else if (extras.getString("list").equals("doneList")){
+            list = toDoList.getDoneList();
+        }
 
         ListItem listItem = new ListItem("Create To Do List", "2017-06-01");
         list.add(listItem);

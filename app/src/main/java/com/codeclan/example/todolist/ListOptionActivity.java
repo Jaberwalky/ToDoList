@@ -28,24 +28,19 @@ public class ListOptionActivity extends AppCompatActivity {
         toDoQty.setText(toDoList.getToDoList().size() + " Items");
         doneQty.setText(toDoList.getDoneList().size() + " Items");
 
-
     }
 
     public void onToDoListClicked(View button){
-        ToDoList lists = new ToDoList();
-        ArrayList toDoList = lists.getToDoList();
 
         Intent intent = new Intent(this, ToDoListActivity.class);
-        intent.putExtra("list", toDoList);
+        intent.putExtra("list", "toDoList");
         startActivity(intent);
     }
 
     public void onDoneListClicked(View button){
-        ToDoList lists = new ToDoList();
-        ArrayList doneList = lists.getDoneList();
 
         Intent intent = new Intent(this, ToDoListActivity.class);
-        intent.putExtra("list", doneList);
+        intent.putExtra("list", "doneList");
         startActivity(intent);
     }
 
