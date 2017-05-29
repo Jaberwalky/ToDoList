@@ -12,13 +12,13 @@ public class ListItem {
 
     private String title;
     private String dueDate;
-    private ArrayList<SubItem> subItems;
+    private ArrayList<SubItem> subToDoList;
     private boolean completed;
 
     public ListItem(String title, String dueDate){
         this.title = title;
         this.dueDate = dueDate;
-        this.subItems = new ArrayList<>();
+        this.subToDoList = new ArrayList<>();
         this.completed = false;
     }
 
@@ -30,12 +30,12 @@ public class ListItem {
         return this.dueDate;
     }
 
-    public void addSubItem(SubItem subItem) {
-        this.subItems.add(subItem);
+    public void addToSubToDo(SubItem subItem) {
+        this.subToDoList.add(subItem);
     }
 
-    public ArrayList<SubItem> getSubItems() {
-        return this.subItems;
+    public ArrayList<SubItem> getSubItemsFromToDo() {
+        return this.subToDoList;
     }
 
     public boolean getCompleted() {

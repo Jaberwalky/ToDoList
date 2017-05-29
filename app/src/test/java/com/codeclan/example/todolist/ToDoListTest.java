@@ -14,7 +14,7 @@ public class ToDoListTest {
         ToDoList todo = new ToDoList();
         ListItem listItem = new ListItem("Create To Do List", "2017-06-01");
         todo.addItemToToDO(listItem);
-        assertEquals(1, todo.getList().size());
+        assertEquals(1, todo.getToDoList().size());
     }
 
     @Test
@@ -22,7 +22,10 @@ public class ToDoListTest {
         ToDoList todo = new ToDoList();
         ListItem listItem = new ListItem("Create To Do List", "2017-06-01");
         todo.addItemToDoneList(listItem);
+        assertEquals(1, todo.getDoneList().size());
     }
+
+
 
 
 }

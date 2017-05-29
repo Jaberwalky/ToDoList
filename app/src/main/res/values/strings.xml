@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ToDoList</string>
+    <string name="to_do_text">To Do</string>
+    <string name="done_text">Done</string>
 </resources>

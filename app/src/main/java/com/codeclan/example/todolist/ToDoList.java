@@ -21,11 +21,17 @@ public class ToDoList {
         this.toDoList.add(listItem);
     }
 
-    public ArrayList getList() {
+    public ArrayList getToDoList() {
         return this.toDoList;
+    }
+
+    public ArrayList<ListItem> getDoneList() {
+        return this.doneList;
     }
 
     public void addItemToDoneList(ListItem listItem) {
         this.doneList.add(listItem);
     }
+
+
 }

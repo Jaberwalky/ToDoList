@@ -25,8 +25,8 @@ public class ListItemTest {
     public void canAddSubItem(){
         ListItem listItem = new ListItem("Create To Do List", "2017-06-01");
         SubItem subItem = new SubItem("Add subitem to listitem class");
-        listItem.addSubItem(subItem);
-        assertEquals(1, listItem.getSubItems().size());
+        listItem.addToSubToDo(subItem);
+        assertEquals(1, listItem.getSubItemsFromToDo().size());
     }
 
     @Test
@@ -34,6 +34,8 @@ public class ListItemTest {
         ListItem listItem = new ListItem("Create To Do List", "2017-06-01");
         assertEquals(false, listItem.getCompleted());
     }
+
+
 
 
 

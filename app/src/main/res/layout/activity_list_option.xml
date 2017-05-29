@@ -7,12 +7,31 @@
     tools:context="com.codeclan.example.todolist.ListOptionActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/textView"
+        android:layout_width="168dp"
+        android:layout_height="57dp"
+        android:text="@string/done_text"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="168dp"
+        android:layout_height="57dp"
+        android:text="@string/to_do_text"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="121dp"
+        android:layout_height="57dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="121dp" />
 
 </android.support.constraint.ConstraintLayout>
