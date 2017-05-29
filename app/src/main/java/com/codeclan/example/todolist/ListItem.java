@@ -13,12 +13,14 @@ public class ListItem {
     private String title;
     private String dueDate;
     private ArrayList<SubItem> subToDoList;
+    private ArrayList<SubItem> subDoneList;
     private boolean completed;
 
     public ListItem(String title, String dueDate){
         this.title = title;
         this.dueDate = dueDate;
         this.subToDoList = new ArrayList<>();
+        this.subDoneList = new ArrayList<>();
         this.completed = false;
     }
 
@@ -36,6 +38,10 @@ public class ListItem {
 
     public ArrayList<SubItem> getSubItemsFromToDo() {
         return this.subToDoList;
+    }
+
+    public ArrayList<SubItem> getSubItemsFromDone(){
+        return this.subDoneList;
     }
 
     public boolean getCompleted() {
