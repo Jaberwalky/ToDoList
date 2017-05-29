@@ -17,12 +17,11 @@ public class ToDoListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
-        ArrayList<ListItem> currentList = (ArrayList<ListItem>) extras.getSerializable("list");
+        ArrayList<ListItem> list = (ArrayList<ListItem>) extras.getSerializable("list");
 
+        ListItem listItem = new ListItem("Create To Do List", "2017-06-01");
+        list.add(listItem);
 
-
-        ToDoList toDoList = new ToDoList();
-        ArrayList<ListItem> list = toDoList.getToDoList();
 
         ToDoListAdapter toDoListAdapter = new ToDoListAdapter(this, list);
 
