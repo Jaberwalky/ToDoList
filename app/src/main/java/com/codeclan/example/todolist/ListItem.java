@@ -1,7 +1,5 @@
 package com.codeclan.example.todolist;
 
-import java.lang.reflect.Array;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
