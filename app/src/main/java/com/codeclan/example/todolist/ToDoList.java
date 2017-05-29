@@ -1,12 +1,13 @@
 package com.codeclan.example.todolist;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by PaulJablonski on 28/05/2017.
  */
 
-public class ToDoList {
+public class ToDoList implements Serializable {
 
     private ArrayList<ListItem> toDoList;
     private ArrayList<ListItem> doneList;

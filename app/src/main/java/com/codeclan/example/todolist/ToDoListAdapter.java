@@ -35,7 +35,7 @@ public class ToDoListAdapter extends ArrayAdapter<ListItem> {
         int subItemToDo = currentItem.getSubItemsFromToDo().size();
         subTaskField.setText(subItemsCompleted + "/" + subItemToDo+subItemsCompleted + " Completed");
 
-        
+        // TODO : use new customer datehelper class to populate due field with countdown.
 
         return listItemView;
 

@@ -1,10 +1,14 @@
 package com.codeclan.example.todolist;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ButtonBarLayout;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class ListOptionActivity extends AppCompatActivity {
 
@@ -24,12 +28,27 @@ public class ListOptionActivity extends AppCompatActivity {
         toDoQty.setText(toDoList.getToDoList().size() + " Items");
         doneQty.setText(toDoList.getDoneList().size() + " Items");
 
-        Button showToDo = (Button) findViewById(R.id.show_to_do_list);
-        Button showDone = (Button) findViewById(R.id.show_done_list);
-
-        
-
-
 
     }
+
+    public void onToDoListClicked(View button){
+        ToDoList lists = new ToDoList();
+        ArrayList toDoList = lists.getToDoList();
+
+        Intent intent = new Intent(this, ToDoListActivity.class);
+        intent.putExtra("list", toDoList);
+        startActivity(intent);
+    }
+
+    public void onDoneListClicked(View button){
+        ToDoList lists = new ToDoList();
+        ArrayList doneList = lists.getDoneList();
+
+        Intent intent = new Intent(this, ToDoListActivity.class);
+        intent.putExtra("list", doneList);
+        startActivity(intent);
+    }
+
+
+
 }
