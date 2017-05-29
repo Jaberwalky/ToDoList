@@ -9,11 +9,11 @@ import static org.junit.Assert.*;
  */
 public class DateHelperTest {
 
-    @Test
-    public void canCalculateDateDifference(){
-       int difference = DateHelper.getDateDifference(2017, 6, 3);
-        assertEquals(5, difference);
-    }
+//    @Test
+//    public void canCalculateDateDifference(){
+//       int difference = DateHelper.getDateDifference(2017, 6, 3);
+//        assertEquals(5, difference);
+//    }
 
 
 }
