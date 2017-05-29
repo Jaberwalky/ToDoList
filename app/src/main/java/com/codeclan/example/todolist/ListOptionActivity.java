@@ -19,9 +19,6 @@ import java.util.StringTokenizer;
 
 public class ListOptionActivity extends AppCompatActivity {
 
-    private SharedPreferences prefs;
-    private Gson gson = new Gson();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +27,10 @@ public class ListOptionActivity extends AppCompatActivity {
         TextView toDoQty = (TextView) findViewById(R.id.to_do_num_of_items);
         TextView doneQty = (TextView) findViewById(R.id.done_num_of_items);
 
-        String toDoJson = getToDoListFromSharedPrefs();
-        ToDoList toDoList = getToDoListFromJson(toDoJson);
+        String sharedPrefsKey = getString(R.string.pref_key);
+        SharedPreferences prefs = getSharedPreferences(sharedPrefsKey, Context.MODE_PRIVATE);
+        String toDoJson = SharedPrefsHelper.getToDoListFromSharedPrefs(prefs);
+        ToDoList toDoList = SharedPrefsHelper.getToDoListFromJson(toDoJson);
 
         toDoQty.setText(toDoList.getToDoList().size() + " Items");
         doneQty.setText(toDoList.getDoneList().size() + " Items");
@@ -49,16 +48,6 @@ public class ListOptionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private String getToDoListFromSharedPrefs(){
-        String sharedPrefsKey = getString(R.string.pref_key);
-        prefs = getSharedPreferences(sharedPrefsKey, Context.MODE_PRIVATE);
-        return prefs.getString("toDoList", gson.toJson(new ToDoList()));
-    }
-
-    private ToDoList getToDoListFromJson(String json){
-        TypeToken<ToDoList> toDoListObject = new TypeToken<ToDoList>(){};
-        return gson.fromJson(json, toDoListObject.getType());
-    }
 
 
 
