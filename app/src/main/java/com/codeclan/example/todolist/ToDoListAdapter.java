@@ -1,6 +1,7 @@
 package com.codeclan.example.todolist;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +40,14 @@ public class ToDoListAdapter extends ArrayAdapter<ListItem> {
 
         TextView daysLeft = (TextView) listItemView.findViewById(R.id.due_field);
         int days = DateHelper.getDateDifference(currentItem.getYear(), currentItem.getMonth(), currentItem.getDay());
-        daysLeft.setText(days + " Days Left");
 
+        daysLeft.setText(days + " Days Left");
         // TODO : work on output of above textview so that 0 days and past are handled correctly.
+
+
+        listItemView.setTag(currentItem); //UPDATED
+
+
 
         return listItemView;
 

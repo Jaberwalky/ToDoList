@@ -13,7 +13,7 @@ public class ToDoListTest {
     public void canAddItemToToDoList(){
         ToDoList todo = new ToDoList();
         ListItem listItem = new ListItem("Create To Do List", 2017, 6, 1);
-        todo.addItemToToDO(listItem);
+        todo.addItemToToDo(listItem);
         assertEquals(1, todo.getToDoList().size());
     }
 

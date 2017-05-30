@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -34,11 +35,6 @@ public class ToDoListActivity extends AppCompatActivity {
             list = toDoList.getDoneList();
         }
 
-        ListItem listItem = new ListItem("Create To Do List", 2017, 6, 3);
-        list.add(listItem);
-        ListItem listItem2 = new ListItem("Another Task", 2017, 6, 6);
-        list.add(listItem2);
-
         ToDoListAdapter toDoListAdapter = new ToDoListAdapter(this, list);
 
         ListView listView = (ListView) findViewById(R.id.list);
@@ -61,6 +57,13 @@ public class ToDoListActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         } return super.onOptionsItemSelected(item);
+    }
+
+    public void getDetailedView(View listItem) {
+        ListItem todoListItem = (ListItem) listItem.getTag();
+        Intent intent = new Intent(this, ListDetailActivity.class);
+        intent.putExtra("todoListItem", todoListItem);
+        startActivity(intent);
     }
 
 

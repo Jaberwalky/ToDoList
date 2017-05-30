@@ -19,7 +19,8 @@
         <activity
             android:name=".ToDoListActivity"
             android:parentActivityName=".ListOptionActivity" />
-        <activity android:name=".AddItemActivity"></activity>
+        <activity android:name=".AddItemActivity" />
+        <activity android:name=".ListDetailActivity"></activity>
     </application>
 
 </manifest>

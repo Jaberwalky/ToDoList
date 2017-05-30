@@ -24,7 +24,8 @@ public class SharedPrefsHelper {
 
     public static void writeToSharedPrefs(ToDoList toDoList, SharedPreferences prefs){
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("myFavourites", gson.toJson(toDoList));
+        String json = gson.toJson(toDoList);
+        editor.putString("toDoList", json);
         editor.apply();
     }
 

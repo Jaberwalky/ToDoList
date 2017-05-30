@@ -18,7 +18,7 @@ public class ToDoList implements Serializable {
     }
 
 
-    public void addItemToToDO(ListItem listItem) {
+    public void addItemToToDo(ListItem listItem) {
         this.toDoList.add(listItem);
     }
 
@@ -34,5 +34,10 @@ public class ToDoList implements Serializable {
         this.doneList.add(listItem);
     }
 
+    public void deleteListItemFromList(ListItem listItem){
+
+
+
+    }
 
 }

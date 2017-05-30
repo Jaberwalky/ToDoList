@@ -6,10 +6,13 @@ import android.content.SharedPreferences;
 import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
+
+import java.util.Date;
 
 public class AddItemActivity extends AppCompatActivity {
 
@@ -45,22 +48,24 @@ public class AddItemActivity extends AppCompatActivity {
 
         ListItem newItem = new ListItem(title.getText().toString(), yearInt, monthInt, dayInt);
 
-        SubItem subItem1 = (SubItem) sub1.getText();
+        SubItem subItem1 = new SubItem(sub1.getText().toString());
+        SubItem subItem2 = new SubItem(sub2.getText().toString());
+        SubItem subItem3 = new SubItem(sub3.getText().toString());
         newItem.addToSubToDo(subItem1);
-        SubItem subItem2 = (SubItem) sub2.getText();
         newItem.addToSubToDo(subItem2);
-        SubItem subItem3 = (SubItem) sub3.getText();
         newItem.addToSubToDo(subItem3);
+
 
         SharedPreferences prefs = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
         String toDoJson = SharedPrefsHelper.getToDoListFromSharedPrefs(prefs);
         ToDoList toDoList = SharedPrefsHelper.getToDoListFromJson(toDoJson);
 
-        toDoList.addItemToToDO(newItem);
-        
+        toDoList.addItemToToDo(newItem);
+
         SharedPrefsHelper.writeToSharedPrefs(toDoList, prefs);
 
         Intent intent = new Intent(this, ToDoListActivity.class);
+        intent.putExtra("list", "toDoList");
         startActivity(intent);
 
     }
