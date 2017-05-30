@@ -57,6 +57,8 @@ public class ToDoListActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListDetailActivity.class);
         intent.putExtra("toDoListItem", todoListItem);
         startActivity(intent);
+
+
     }
 
 

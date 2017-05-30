@@ -8,7 +8,7 @@ import java.util.Calendar;
 
 public class DateHelper {
 
-    public static int getDateDifference(int year, int month, int day){
+    public static String getDateDifference(int year, int month, int day){
         Calendar dueDate = Calendar.getInstance();
         dueDate.setTimeInMillis(0);
         dueDate.set(Calendar.YEAR, year);
@@ -17,7 +17,19 @@ public class DateHelper {
 
         Calendar today = Calendar.getInstance();
         long difference = (dueDate.getTimeInMillis() - today.getTimeInMillis()) / 1000;
-        return (int) (difference / (1440 * 60));
+        int days = (int) (difference / (1440 * 60));
+
+        if (days > 0) {
+            return "Due in " + days;
+        } else if (days == 0) {
+            return "Due Today";
+        } else {
+            return "Overdue";
+        }
+
+
+
+
     }
 
 
