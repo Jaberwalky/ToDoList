@@ -39,7 +39,7 @@ public class ToDoListAdapter extends ArrayAdapter<ListItem> {
         subTaskField.setText(subItemsCompleted + "/" + subItemToDo+subItemsCompleted + " Completed");
 
         TextView daysLeft = (TextView) listItemView.findViewById(R.id.due_field);
-        String daysString = DateHelper.getDateDifference(currentItem.getYear(), currentItem.getMonth(), currentItem.getDay());
+        String daysString = DateHelper.getDateDifference(currentItem);
         daysLeft.setText(daysString);
         // TODO : work on output of above textview so that 0 days and past are handled correctly.
 

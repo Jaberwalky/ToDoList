@@ -23,7 +23,7 @@ public class ListDetailActivity extends AppCompatActivity {
         titleView.setText(listItem.getTitle());
 
         TextView dueDateView = (TextView) findViewById(R.id.due_date_view);
-        String daysString = DateHelper.getDateDifference(listItem.getYear(), listItem.getMonth(), listItem.getDay());
+        String daysString = DateHelper.getDateDifference(listItem);
         dueDateView.setText(daysString);
 //
 //        TextView subItem1 = (TextView) findViewById(R.id.sub_item_1_view);
