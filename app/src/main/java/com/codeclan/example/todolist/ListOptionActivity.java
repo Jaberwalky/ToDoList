@@ -40,13 +40,11 @@ public class ListOptionActivity extends AppCompatActivity {
 
     public void onToDoListClicked(View button){
         Intent intent = new Intent(this, ToDoListActivity.class);
-        intent.putExtra("list", "toDoList");
         startActivity(intent);
     }
 
     public void onDoneListClicked(View button){
-        Intent intent = new Intent(this, ToDoListActivity.class);
-        intent.putExtra("list", "doneList");
+        Intent intent = new Intent(this, DoneListActivity.class);
         startActivity(intent);
     }
 

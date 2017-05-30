@@ -16,7 +16,7 @@ public class ListDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         ListItem listItem = (ListItem) intent.getSerializableExtra("toDoListItem");
 
-        
+
         String title = listItem.getTitle();
 
 

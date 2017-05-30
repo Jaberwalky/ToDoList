@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".ListOptionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,12 +17,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ToDoListActivity"
             android:parentActivityName=".ListOptionActivity" />
-        <activity android:name=".AddItemActivity" />
-        <activity android:name=".ListDetailActivity"
-            android:parentActivityName=".ToDoListActivity"></activity>
+
+        <activity android:name=".AddItemActivity"
+            android:parentActivityName=".ToDoListActivity"/>
+
+        <activity
+            android:name=".ListDetailActivity"
+            android:parentActivityName=".ToDoListActivity" />
+
+        <activity android:name=".DoneListActivity"
+            android:parentActivityName=".ListOptionActivity"></activity>
+
     </application>
 
 </manifest>

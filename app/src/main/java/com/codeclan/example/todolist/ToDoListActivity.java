@@ -15,8 +15,6 @@ import java.util.ArrayList;
 
 public class ToDoListActivity extends AppCompatActivity {
 
-    private ArrayList list;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,17 +27,12 @@ public class ToDoListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
-        if (extras.getString("list").equals("toDoList")) {
-            list = toDoList.getToDoList();
-        } else if (extras.getString("list").equals("doneList")){
-            list = toDoList.getDoneList();
-        }
+        ArrayList list = toDoList.getToDoList();
 
         ToDoListAdapter toDoListAdapter = new ToDoListAdapter(this, list);
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(toDoListAdapter);
-
     }
 
     // add menu for add item.
@@ -64,8 +57,6 @@ public class ToDoListActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListDetailActivity.class);
         intent.putExtra("toDoListItem", todoListItem);
         startActivity(intent);
-
-
     }
 
 
