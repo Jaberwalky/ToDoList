@@ -20,7 +20,8 @@
             android:name=".ToDoListActivity"
             android:parentActivityName=".ListOptionActivity" />
         <activity android:name=".AddItemActivity" />
-        <activity android:name=".ListDetailActivity"></activity>
+        <activity android:name=".ListDetailActivity"
+            android:parentActivityName=".ToDoListActivity"></activity>
     </application>
 
 </manifest>

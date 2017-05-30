@@ -62,8 +62,10 @@ public class ToDoListActivity extends AppCompatActivity {
     public void getDetailedView(View listItem) {
         ListItem todoListItem = (ListItem) listItem.getTag();
         Intent intent = new Intent(this, ListDetailActivity.class);
-        intent.putExtra("todoListItem", todoListItem);
+        intent.putExtra("toDoListItem", todoListItem);
         startActivity(intent);
+
+
     }
 
 
