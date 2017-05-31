@@ -36,14 +36,9 @@ public class ToDoList implements Serializable {
     public void addItemToDoneList(ListItem listItem) {
         this.doneList.add(listItem);
     }
+    
 
-//    TODO : add method that first finds item in the list then moves selected item to doneList
-
-
-
-
-
-    public void moveItemToDoneList(ListItem listItem) {
+    public void removeItemFromToDoList(ListItem listItem){
         ArrayList newArrayList = new ArrayList<>();
         for (ListItem item : this.toDoList) {
             if (!item.equals(listItem)) {
@@ -51,8 +46,10 @@ public class ToDoList implements Serializable {
             }
         }
         setToDoList(newArrayList);
-        this.doneList.add(listItem);
     }
+
+
+
 
     public void setToDoList(ArrayList toDoList) {
         this.toDoList = toDoList;

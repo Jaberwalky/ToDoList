@@ -27,11 +27,6 @@ public class ListItemTest {
         assertEquals("Finish the bloody project.", listItem.getDetails());
     }
 
-    @Test
-    public void listItemCompletedDefaultsToFalse(){
-        ListItem listItem = new ListItem("Create To Do List", 2017, 6, 1, "Finish the bloody project.");
-        assertEquals(false, listItem.getCompleted());
-    }
 
 
 

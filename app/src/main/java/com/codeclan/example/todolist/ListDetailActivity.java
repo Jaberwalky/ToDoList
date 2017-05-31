@@ -44,7 +44,8 @@ public class ListDetailActivity extends AppCompatActivity {
         String toDoJson = SharedPrefsHelper.getToDoListFromSharedPrefs(prefs);
         ToDoList toDoList = SharedPrefsHelper.getToDoListFromJson(toDoJson);
 
-        toDoList.moveItemToDoneList(listItem);
+        toDoList.removeItemFromToDoList(listItem);
+        toDoList.addItemToDoneList(listItem);
 
         SharedPrefsHelper.writeToSharedPrefs(toDoList, prefs);
 

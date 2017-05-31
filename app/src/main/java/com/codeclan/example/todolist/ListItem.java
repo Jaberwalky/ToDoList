@@ -17,7 +17,6 @@ public class ListItem implements Serializable {
     private String details;
 
 
-    private boolean completed;
 
     public ListItem(String title, int year, int month, int day, String details){
         this.title = title;
@@ -25,7 +24,6 @@ public class ListItem implements Serializable {
         this.month = month;
         this.day = day;
         this.details = details;
-        this.completed = false;
     }
 
     public String getTitle() {
@@ -46,10 +44,6 @@ public class ListItem implements Serializable {
 
     public String getDetails(){
         return this.details;
-    }
-
-    public boolean getCompleted() {
-        return this.completed;
     }
 
     public boolean equals(ListItem listItem) {
