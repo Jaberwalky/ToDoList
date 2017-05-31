@@ -12,7 +12,7 @@ public class ToDoListTest {
     @Test
     public void canAddItemToToDoList(){
         ToDoList todo = new ToDoList();
-        ListItem listItem = new ListItem("Create To Do List", 2017, 6, 1);
+        ListItem listItem = new ListItem("Create To Do List", 2017, 6, 1, "Finish the bloody project.");
         todo.addItemToToDo(listItem);
         assertEquals(1, todo.getToDoList().size());
     }
@@ -20,7 +20,7 @@ public class ToDoListTest {
     @Test
     public void canAddItemToDoneList(){
         ToDoList todo = new ToDoList();
-        ListItem listItem = new ListItem("Create To Do List", 2017, 6, 1);
+        ListItem listItem = new ListItem("Create To Do List", 2017, 6, 1, "Finish the bloody project.");
         todo.addItemToDoneList(listItem);
         assertEquals(1, todo.getDoneList().size());
     }

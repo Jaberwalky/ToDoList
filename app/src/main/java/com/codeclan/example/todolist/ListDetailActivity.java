@@ -25,17 +25,12 @@ public class ListDetailActivity extends AppCompatActivity {
         TextView dueDateView = (TextView) findViewById(R.id.due_date_view);
         String daysString = DateHelper.getDateDifference(listItem);
         dueDateView.setText(daysString);
-//
-//        TextView subItem1 = (TextView) findViewById(R.id.sub_item_1_view);
-//        CheckBox sub1Done = (CheckBox) findViewById(R.id.sub_1_done);
-//
-//
-//        TextView subItem2 = (TextView) findViewById(R.id.sub_item_2_view);
-//        CheckBox sub2Done = (CheckBox) findViewById(R.id.sub_2_done);
-//
-//        TextView subItem3 = (TextView) findViewById(R.id.sub_item_3_view);
-//        CheckBox sub3Done = (CheckBox) findViewById(R.id.sub_3_done);
-
-
     }
+
+
+
+
+
+
+
 }

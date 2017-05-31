@@ -10,7 +10,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class ToDoListActivity extends AppCompatActivity {
@@ -23,9 +22,6 @@ public class ToDoListActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
         String toDoJson = SharedPrefsHelper.getToDoListFromSharedPrefs(prefs);
         ToDoList toDoList = SharedPrefsHelper.getToDoListFromJson(toDoJson);
-
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
 
         ArrayList list = toDoList.getToDoList();
 
@@ -57,9 +53,8 @@ public class ToDoListActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListDetailActivity.class);
         intent.putExtra("toDoListItem", todoListItem);
         startActivity(intent);
-
-
     }
+
 
 
 }

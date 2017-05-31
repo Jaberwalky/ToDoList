@@ -34,10 +34,6 @@ public class ToDoListAdapter extends ArrayAdapter<ListItem> {
 
         TextView subTaskField = (TextView) listItemView.findViewById(R.id.completed_sub_task_field);
 
-        int subItemsCompleted = currentItem.getSubItemsFromDone().size();
-        int subItemToDo = currentItem.getSubItemsFromToDo().size();
-        subTaskField.setText(subItemsCompleted + "/" + subItemToDo+subItemsCompleted + " Completed");
-
         TextView daysLeft = (TextView) listItemView.findViewById(R.id.due_field);
         String daysString = DateHelper.getDateDifference(currentItem);
         daysLeft.setText(daysString);

@@ -13,17 +13,17 @@ public class ListItem implements Serializable {
     private int year;
     private int month;
     private int day;
-    private ArrayList<SubItem> subToDoList;
-    private ArrayList<SubItem> subDoneList;
+    private String details;
+
+
     private boolean completed;
 
-    public ListItem(String title, int year, int month, int day){
+    public ListItem(String title, int year, int month, int day, String details){
         this.title = title;
         this.year = year;
         this.month = month;
         this.day = day;
-        this.subToDoList = new ArrayList<>();
-        this.subDoneList = new ArrayList<>();
+        this.details = details;
         this.completed = false;
     }
 
@@ -43,16 +43,8 @@ public class ListItem implements Serializable {
         return this.day;
     }
 
-    public void addToSubToDo(SubItem subItem) {
-        this.subToDoList.add(subItem);
-    }
-
-    public ArrayList<SubItem> getSubItemsFromToDo() {
-        return this.subToDoList;
-    }
-
-    public ArrayList<SubItem> getSubItemsFromDone(){
-        return this.subDoneList;
+    public String getDetails(){
+        return this.details;
     }
 
     public boolean getCompleted() {
