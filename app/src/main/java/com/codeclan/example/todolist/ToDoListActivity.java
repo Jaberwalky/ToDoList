@@ -31,7 +31,6 @@ public class ToDoListActivity extends AppCompatActivity {
         listView.setAdapter(toDoListAdapter);
     }
 
-    // add menu for add item.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();

@@ -33,6 +33,8 @@ public class DoneListAdapter extends ArrayAdapter<ListItem> {
         String daysString = DateHelper.getDateDifference(currentItem);
         daysLeft.setText(daysString);
 
+
+
         return listItemView;
 
     }

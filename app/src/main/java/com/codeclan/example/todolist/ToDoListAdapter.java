@@ -1,16 +1,12 @@
 package com.codeclan.example.todolist;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by PaulJablonski on 29/05/2017.
@@ -18,7 +14,6 @@ import java.util.Date;
 
 public class ToDoListAdapter extends ArrayAdapter<ListItem> {
 
-    private Button deleteButton;
 
     public ToDoListAdapter(Context context, ArrayList<ListItem> listItem) {
         super(context, 0, listItem);
@@ -26,7 +21,6 @@ public class ToDoListAdapter extends ArrayAdapter<ListItem> {
 
     @Override
     public View getView(int position, View listItemView, ViewGroup parent) {
-
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.to_do_item, parent, false);
         }
@@ -41,10 +35,12 @@ public class ToDoListAdapter extends ArrayAdapter<ListItem> {
         daysLeft.setText(daysString);
 
         listItemView.setTag(currentItem);
+
         return listItemView;
 
-
     }
+
+
 
 
 }
