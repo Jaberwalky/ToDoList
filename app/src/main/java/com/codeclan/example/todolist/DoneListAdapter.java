@@ -35,7 +35,6 @@ public class DoneListAdapter extends ArrayAdapter<ListItem> {
         String daysString = DateHelper.getDateDifference(currentItem);
         daysLeft.setText(daysString);
 
-        listItemView.setTag(currentItem);
         return listItemView;
 
     }

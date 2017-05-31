@@ -11,6 +11,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -46,6 +47,9 @@ public class ListDetailActivity extends AppCompatActivity {
         toDoList.moveItemToDoneList(listItem);
 
         SharedPrefsHelper.writeToSharedPrefs(toDoList, prefs);
+
+        Intent intent = new Intent(this, ToDoListActivity.class);
+        startActivity(intent);
     }
 
 
