@@ -1,6 +1,9 @@
 package com.codeclan.example.todolist;
 
+import android.util.Log;
+
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -34,10 +37,24 @@ public class ToDoList implements Serializable {
         this.doneList.add(listItem);
     }
 
-    public void deleteListItemFromList(ListItem listItem){
+//    TODO : add method that first finds item in the list then moves selected item to doneList
 
 
 
+
+
+    public void moveItemToDoneList(ListItem listItem) {
+        ArrayList newArrayList = new ArrayList<>();
+        for (ListItem item : this.toDoList) {
+            if (!item.equals(listItem)) {
+                newArrayList.add(item);
+            }
+        }
+        setToDoList(newArrayList);
+        this.doneList.add(listItem);
     }
 
+    public void setToDoList(ArrayList toDoList) {
+        this.toDoList = toDoList;
+    }
 }

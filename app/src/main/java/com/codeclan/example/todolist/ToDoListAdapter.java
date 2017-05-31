@@ -32,18 +32,11 @@ public class ToDoListAdapter extends ArrayAdapter<ListItem> {
         TextView title = (TextView) listItemView.findViewById(R.id.title_text);
         title.setText(currentItem.getTitle());
 
-        TextView subTaskField = (TextView) listItemView.findViewById(R.id.completed_sub_task_field);
-
         TextView daysLeft = (TextView) listItemView.findViewById(R.id.due_field);
         String daysString = DateHelper.getDateDifference(currentItem);
         daysLeft.setText(daysString);
-        // TODO : work on output of above textview so that 0 days and past are handled correctly.
-
 
         listItemView.setTag(currentItem); //UPDATED
-
-
-
         return listItemView;
 
     }

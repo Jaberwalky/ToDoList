@@ -1,14 +1,23 @@
 package com.codeclan.example.todolist;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ListDetailActivity extends AppCompatActivity {
+
+    private ListItem listItem;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +25,7 @@ public class ListDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_detail);
 
         Intent intent = getIntent();
-        ListItem listItem = (ListItem) intent.getSerializableExtra("toDoListItem");
+        listItem = (ListItem) intent.getSerializableExtra("toDoListItem");
 
         TextView titleView = (TextView) findViewById(R.id.title_view);
         titleView.setText(listItem.getTitle());
@@ -29,6 +38,20 @@ public class ListDetailActivity extends AppCompatActivity {
         detailView.setText(listItem.getDetails());
     }
 
+    public void onMarkCompleteButtonPressed(View button){
+        SharedPreferences prefs = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
+        String toDoJson = SharedPrefsHelper.getToDoListFromSharedPrefs(prefs);
+        ToDoList toDoList = SharedPrefsHelper.getToDoListFromJson(toDoJson);
+
+        ArrayList<ListItem> todoBefore = toDoList.getToDoList();
+        ArrayList<ListItem> donelistBefore = toDoList.getDoneList();
+
+        toDoList.moveItemToDoneList(listItem);
+
+        ArrayList<ListItem> todoAfter = toDoList.getToDoList();
+        ArrayList<ListItem> donelistAfter = toDoList.getDoneList();
+        SharedPrefsHelper.writeToSharedPrefs(toDoList, prefs);
+    }
 
 
 

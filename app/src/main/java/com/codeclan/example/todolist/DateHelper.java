@@ -21,8 +21,10 @@ public class DateHelper {
         long difference = (dueDate.getTimeInMillis() - today.getTimeInMillis()) / 1000;
         int days = (int) (difference / (1440 * 60));
 
-        if (days > 0) {
-            return "Due in " + days;
+        if (days == 1) {
+            return "Due in " + days + " day";
+        } else if (days > 1) {
+            return "Due in " + days + " days";
         } else if (days == 0) {
             return "Due Today";
         } else {

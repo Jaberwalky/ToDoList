@@ -2,6 +2,7 @@ package com.codeclan.example.todolist;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by PaulJablonski on 28/05/2017.
@@ -50,4 +51,14 @@ public class ListItem implements Serializable {
     public boolean getCompleted() {
         return this.completed;
     }
+
+    public boolean equals(ListItem listItem) {
+        return this.getTitle().equals(listItem.getTitle())
+                && this.getYear() == listItem.getYear()
+                && this.getMonth() == listItem.getMonth()
+                && this.getDay() == listItem.getDay()
+                && this.getDetails().equals(listItem.getDetails());
+    }
+
+
 }
