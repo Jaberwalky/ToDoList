@@ -1,7 +1,6 @@
 package com.codeclan.example.todolist;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,15 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
- * Created by PaulJablonski on 29/05/2017.
+ * Created by PaulJablonski on 31/05/2017.
  */
 
-public class ToDoListAdapter extends ArrayAdapter<ListItem> {
+public class DoneListAdapter extends ArrayAdapter<ListItem> {
 
-    public ToDoListAdapter(Context context, ArrayList<ListItem> listItem) {
+    public DoneListAdapter(Context context, ArrayList<ListItem> listItem) {
         super(context, 0, listItem);
     }
 
@@ -41,6 +39,7 @@ public class ToDoListAdapter extends ArrayAdapter<ListItem> {
         return listItemView;
 
     }
+
 
 
 }

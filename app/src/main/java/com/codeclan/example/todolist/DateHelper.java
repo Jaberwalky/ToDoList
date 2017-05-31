@@ -28,7 +28,7 @@ public class DateHelper {
         } else if (days == 0) {
             return "Due Today";
         } else {
-            return "Overdue";
+            return days + " Days Overdue";
         }
     }
 

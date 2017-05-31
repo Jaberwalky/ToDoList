@@ -21,10 +21,10 @@ public class DoneListActivity extends AppCompatActivity {
 
         ArrayList list = toDoList.getDoneList();
 
-        ToDoListAdapter toDoListAdapter = new ToDoListAdapter(this, list);
+        DoneListAdapter doneListAdapter = new DoneListAdapter(this, list);
 
         ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(toDoListAdapter);
+        listView.setAdapter(doneListAdapter);
     }
 
 
