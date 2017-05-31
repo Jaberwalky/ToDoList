@@ -3,11 +3,10 @@ package com.codeclan.example.todolist;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.CheckBox;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
-import java.util.List;
+import org.w3c.dom.Text;
+
 
 public class ListDetailActivity extends AppCompatActivity {
 
@@ -25,6 +24,9 @@ public class ListDetailActivity extends AppCompatActivity {
         TextView dueDateView = (TextView) findViewById(R.id.due_date_view);
         String daysString = DateHelper.getDateDifference(listItem);
         dueDateView.setText(daysString);
+
+        TextView detailView = (TextView) findViewById(R.id.detail_text_view);
+        detailView.setText(listItem.getDetails());
     }
 
 

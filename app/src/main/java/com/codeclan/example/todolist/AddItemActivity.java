@@ -8,13 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class AddItemActivity extends AppCompatActivity {
 
     private TextView title;
     private TextView year;
     private TextView month;
     private TextView day;
-
+    private TextView details;
 
 
     @Override
@@ -26,7 +28,7 @@ public class AddItemActivity extends AppCompatActivity {
         year = (TextView) findViewById(R.id.year_text);
         month = (TextView) findViewById(R.id.month_text);
         day = (TextView) findViewById(R.id.day_text);
-
+        details = (TextView) findViewById(R.id.details_view);
 
     }
 
@@ -36,7 +38,7 @@ public class AddItemActivity extends AppCompatActivity {
         int monthInt = Integer.parseInt(month.getText().toString());
         int dayInt = Integer.parseInt(day.getText().toString());
 
-        ListItem newItem = new ListItem(title.getText().toString(), yearInt, monthInt, dayInt, "Finish the bloody project.");
+        ListItem newItem = new ListItem(title.getText().toString(), yearInt, monthInt, dayInt, details.getText().toString());
 
         SharedPreferences prefs = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
         String toDoJson = SharedPrefsHelper.getToDoListFromSharedPrefs(prefs);
@@ -47,7 +49,6 @@ public class AddItemActivity extends AppCompatActivity {
         SharedPrefsHelper.writeToSharedPrefs(toDoList, prefs);
 
         Intent intent = new Intent(this, ToDoListActivity.class);
-        intent.putExtra("list", "toDoList");
         startActivity(intent);
 
     }
