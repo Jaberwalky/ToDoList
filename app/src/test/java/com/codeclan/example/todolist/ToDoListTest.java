@@ -33,7 +33,8 @@ public class ToDoListTest {
         todo.addItemToToDo(listItem);
         assertEquals(1, todo.getToDoList().size());
         assertEquals(0, todo.getDoneList().size());
-        todo.moveItemToDoneList(listItem2);
+        todo.removeItemFromToDoList(listItem2);
+        todo.addItemToDoneList(listItem2);
         assertEquals(1, todo.getDoneList().size());
         assertEquals(0, todo.getToDoList().size());
     }

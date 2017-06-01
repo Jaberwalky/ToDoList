@@ -49,7 +49,7 @@ public class ListDetailActivity extends AppCompatActivity {
 
         SharedPrefsHelper.writeToSharedPrefs(toDoList, prefs);
 
-        Intent intent = new Intent(this, ToDoListActivity.class);
+        Intent intent = new Intent(this, ListOptionActivity.class);
         startActivity(intent);
     }
 

@@ -30,8 +30,7 @@ public class DoneListAdapter extends ArrayAdapter<ListItem> {
         title.setText(currentItem.getTitle());
 
         TextView daysLeft = (TextView) listItemView.findViewById(R.id.due_field);
-        String daysString = DateHelper.getDateDifference(currentItem);
-        daysLeft.setText(daysString);
+        daysLeft.setText("Task Completed!");
 
 
 
